@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="SY Health - Sistema Integral de Gestión de Pacientes">
+
+    <title>SY Health | Gestión de Pacientes</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <div>
+                <h1>✚ SY Health</h1>
+                <p>Sistema Integral de Gestión de Pacientes</p>
+            </div>
+
+            <span class="badge">Panel Administrativo</span>
+        </header>
+
+        <main>
+
+            <section class="card">
+
+                <h2 id="formTitle">Registrar paciente</h2>
+
+                <p class="subtitle">
+                    Completa los datos del paciente para
+                    registrarlo en el sistema.
+                </p>
+
+                <form id="patientForm">
+
+                    <input type="hidden" id="patientId">
+
+                    <div class="form-grid">
+
+                        <div class="field">
+                            <label for="firstName">Nombre *</label>
+                            <input type="text"
+                                   id="firstName"
+                                   placeholder="Ej. María"
+                                   required
+                                   maxlength="100">
+                        </div>
+
+                        <div class="field">
+                            <label for="lastName">Apellido *</label>
+                            <input type="text"
+                                   id="lastName"
+                                   placeholder="Ej. Rodríguez"
+                                   required
+                                   maxlength="100">
+                        </div>
+
+                        <div class="field">
+                            <label for="identification">Cédula *</label>
+                            <input type="text"
+                                   id="identification"
+                                   placeholder="000-0000000-0"
+                                   required
+                                   maxlength="20">
+                        </div>
+
+                        <div class="field">
+                            <label for="birthDate">
+                                Fecha de nacimiento
+                            </label>
+                            <input type="date"
+                                   id="birthDate">
+                        </div>
+
+                        <div class="field">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel"
+                                   id="phone"
+                                   placeholder="809-000-0000"
+                                   maxlength="20">
+                        </div>
+
+                        <div class="field">
+                            <label for="address">Dirección</label>
+                            <input type="text"
+                                   id="address"
+                                   placeholder="Dirección del paciente"
+                                   maxlength="200">
+                        </div>
+
+                    </div>
+
+                    <div class="actions">
+
+                        <button type="submit"
+                                class="btn-primary"
+                                id="saveButton">
+                            Guardar paciente
+                        </button>
+
+                        <button type="button"
+                                class="btn-secondary"
+                                id="cancelButton"
+                                hidden>
+                            Cancelar edición
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+            <section class="card">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Pacientes registrados</h2>
+                        <p class="subtitle">
+                            Consulta, busca y administra
+                            los pacientes del sistema.
+                        </p>
+                    </div>
+
+                    <span id="patientCount" class="counter">
+                        0 pacientes
+                    </span>
+
+                </div>
+
+                <div class="toolbar">
+
+                    <input type="search"
+                           id="searchInput"
+                           placeholder="Buscar por nombre o cédula..."
+                           aria-label="Buscar pacientes">
+
+                    <button type="button"
+                            class="btn-secondary"
+                            id="refreshButton">
+                        Actualizar
+                    </button>
+
+                </div>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre completo</th>
+                                <th>Cédula</th>
+                                <th>Teléfono</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="patientsTable">
+                            <tr>
+                                <td colspan="5" class="empty">
+                                    Cargando pacientes...
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            SY Health © 2026 | Desarrollado por Sheila Severino
+        </footer>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
